@@ -6,4 +6,4 @@ custom game win condition to "CheatCommands Mod II (Annih.)", a 4v4 map is also
 needed.
  - Tested under resolution 1366\*768 window mode, use Alt + Enter to activate.
  - Start at the title screen, press F3 to activate this script.
- - Due to looting limits the script only brings at most 4 scrapbox per day.
+ - Due to looting limits the script only brings at most 4 lootbox per day.
