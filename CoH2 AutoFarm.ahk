@@ -69,7 +69,7 @@ $f3::
             Sleep 3*1000
         }
         Else {
-            Send Space
+            Send {Space}
             Sleep 2000
         }
     }
@@ -106,16 +106,16 @@ isModeSelect() {
 }
 
 isMapSelect() {
-    PixelGetColor, mapSelect0, 830, 275     ;3B3A3B
-    PixelGetColor, mapSelect1, 1244, 215    ;9B989B
-    PixelGetColor, mapSelect2, 1248, 283    ;5F5F5F
-    PixelGetColor, mapSelect3, 856, 327     ;C6C7C6
-    PixelGetColor, mapSelect4, 831, 216     ;555855
-    isMapSelect0 := mapSelect0 == 0x3B3A3B
-    isMapSelect1 := mapSelect1 == 0x9B989B
-    isMapSelect2 := mapSelect2 == 0x5F5F5F
-    isMapSelect3 := mapSelect3 == 0xC6C7C6
-    isMapSelect4 := mapSelect4 == 0x555855
+    PixelGetColor, mapSelect0, 318, 190     ;F5ECE1
+    PixelGetColor, mapSelect1, 831, 215     ;787578
+    PixelGetColor, mapSelect2, 829, 258     ;393639
+    PixelGetColor, mapSelect3, 118, 579     ;262626
+    PixelGetColor, mapSelect4, 678, 285     ;383638
+    isMapSelect0 := mapSelect0 == 0xE1ECF5
+    isMapSelect1 := mapSelect1 == 0x787578
+    isMapSelect2 := mapSelect2 == 0x393639
+    isMapSelect3 := mapSelect3 == 0x262626
+    isMapSelect4 := mapSelect4 == 0x383638
     return isMapSelect0 && isMapSelect1 && isMapSelect2 && isMapSelect3
             && isMapSelect4
 }
