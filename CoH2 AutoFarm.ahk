@@ -13,30 +13,32 @@ required to be selected.
 
 #IfWinActive Company Of Heroes 2
 $f3::
+    CoordMode, Pixel, Client
+    CoordMode, Mouse, Client
     While (True) {
         If (isMainMenu()) {
             SoundBeep
-            Send {Click 213 301}
+            Send {Click 205 270}
             Sleep 3*1000
         }
         Else If (isModeSelect()) {
-            Send {Click 828 484}
+            Send {Click 820 453}
             Sleep 3*1000
         }
         Else If (isMapSelect()) {
-            Send {Click 433 369}
+            Send {Click 425 338}
             Sleep 500
-            Send {Click 443 483}
+            Send {Click 435 452}
             Sleep 500
-            Send {Click 449 643}
+            Send {Click 441 612}
             Sleep 500
-            Send {Click 1138 272}
+            Send {Click 1130 241}
             Sleep 500
-            Send {Click 1138 393}
+            Send {Click 1130 362}
             Sleep 500
-            Send {Click 1143 520}
+            Send {Click 1135 489}
             Sleep 500
-            Send {Click 695 753}
+            Send {Click 687 722}
             SoundBeep, 300, 500
             SoundBeep, 700, 500
             Sleep 3*1000
@@ -44,28 +46,28 @@ $f3::
         Else If (isDisconnect()) {
             SoundBeep, 700, 500
             SoundBeep, 300, 500
-            Send {Click 693 441}
+            Send {Click 685 410}
             Sleep 3*1000
         }
         Else If (isGame()) {
             Sleep 5*60*1000
-            Send {Click 125 45}
+            Send {Click 117 14}
             Sleep 500
-            Send {Click 103 128}
+            Send {Click 95 97}
             Sleep 500
-            Send {Click 296 290}
+            Send {Click 288 259}
             Sleep 500
-            Send {Click 462 295}
+            Send {Click 454 264}
             Sleep 500
-            Send {Click 638 482}
+            Send {Click 630 451}
             Sleep 30*1000
-            Send {Click 692 334}
+            Send {Click 684 303}
             Sleep 3*1000
-            Send {Click 619 91}
+            Send {Click 611 60}
             Sleep 3*1000
         }
         Else If (isStats()) {
-            Send {Click 657 708}
+            Send {Click 649 677}
             Sleep 3*1000
         }
         Else {
@@ -76,11 +78,11 @@ $f3::
     Return
 
 isMainMenu() {
-    PixelGetColor, mainMenu0, 191, 134      ;761E15
-    PixelGetColor, mainMenu1, 251, 134      ;E0DBD4
-    PixelGetColor, mainMenu2, 150, 209      ;080D13
-    PixelGetColor, mainMenu3, 296, 225      ;510F0D
-    PixelGetColor, mainMenu4, 321, 470      ;353A35
+    PixelGetColor, mainMenu0, 183, 103      ;761E15
+    PixelGetColor, mainMenu1, 243, 103      ;E0DBD4
+    PixelGetColor, mainMenu2, 142, 178      ;080D13
+    PixelGetColor, mainMenu3, 288, 194      ;510F0D
+    PixelGetColor, mainMenu4, 313, 439      ;353A35
     isMainMenu0 := mainMenu0 == 0x151E76
     isMainMenu1 := mainMenu1 == 0xD4DBE0
     isMainMenu2 := mainMenu2 == 0x130D08
@@ -91,11 +93,11 @@ isMainMenu() {
 }
 
 isModeSelect() {
-    PixelGetColor, modeSelect0, 204, 135        ;B7A8A2
-    PixelGetColor, modeSelect1, 351, 547        ;D9D6C4
-    PixelGetColor, modeSelect2, 766, 564        ;EAE5D2
-    PixelGetColor, modeSelect3, 732, 539        ;5F463E
-    PixelGetColor, modeSelect4, 871, 537        ;F1E9D2
+    PixelGetColor, modeSelect0, 196, 104        ;B7A8A2
+    PixelGetColor, modeSelect1, 343, 516        ;D9D6C4
+    PixelGetColor, modeSelect2, 758, 533        ;EAE5D2
+    PixelGetColor, modeSelect3, 724, 508        ;5F463E
+    PixelGetColor, modeSelect4, 863, 506        ;F1E9D2
     isModeSelect0 := modeSelect0 == 0xA2A8B7
     isModeSelect1 := modeSelect1 == 0xC4D6D9
     isModeSelect2 := modeSelect2 == 0xD2E5EA
@@ -106,11 +108,11 @@ isModeSelect() {
 }
 
 isMapSelect() {
-    PixelGetColor, mapSelect0, 318, 190     ;F5ECE1
-    PixelGetColor, mapSelect1, 831, 215     ;787578
-    PixelGetColor, mapSelect2, 829, 258     ;393639
-    PixelGetColor, mapSelect3, 118, 579     ;262626
-    PixelGetColor, mapSelect4, 678, 285     ;383638
+    PixelGetColor, mapSelect0, 310, 159     ;F5ECE1
+    PixelGetColor, mapSelect1, 823, 184     ;787578
+    PixelGetColor, mapSelect2, 821, 227     ;393639
+    PixelGetColor, mapSelect3, 110, 548     ;262626
+    PixelGetColor, mapSelect4, 670, 254     ;383638
     isMapSelect0 := mapSelect0 == 0xE1ECF5
     isMapSelect1 := mapSelect1 == 0x787578
     isMapSelect2 := mapSelect2 == 0x393639
@@ -118,14 +120,14 @@ isMapSelect() {
     isMapSelect4 := mapSelect4 == 0x383638
     return isMapSelect0 && isMapSelect1 && isMapSelect2 && isMapSelect3
             && isMapSelect4
-}
+} 
 
 isDisconnect() {
-    PixelGetColor, disconnect0, 670, 364        ;AEA7A0
-    PixelGetColor, disconnect1, 720, 407        ;998A67
-    PixelGetColor, disconnect2, 776, 364        ;813329
-    PixelGetColor, disconnect3, 577, 409        ;2A221C
-    PixelGetColor, disconnect4, 703, 460        ;444742
+    PixelGetColor, disconnect0, 662, 333        ;AEA7A0
+    PixelGetColor, disconnect1, 712, 376        ;998A67
+    PixelGetColor, disconnect2, 768, 333        ;813329
+    PixelGetColor, disconnect3, 569, 378        ;2A221C
+    PixelGetColor, disconnect4, 695, 429        ;444742
     isDisconnect0 := disconnect0 == 0xA0A7AE
     isDisconnect1 := disconnect1 == 0x678A99
     isDisconnect2 := disconnect2 == 0x293381
@@ -136,11 +138,11 @@ isDisconnect() {
 }
 
 isGame() {
-    PixelGetColor, game0, 259, 569      ;4F4A47
-    PixelGetColor, game1, 17, 610       ;1F1E16
-    PixelGetColor, game2, 271, 734      ;4D4542
-    PixelGetColor, game3, 67, 559       ;302927
-    PixelGetColor, game4, 398, 651      ;404240
+    PixelGetColor, game0, 251, 538      ;4F4A47
+    PixelGetColor, game1, 9, 579       ;1F1E16
+    PixelGetColor, game2, 263, 703      ;4D4542
+    PixelGetColor, game3, 59, 528       ;302927
+    PixelGetColor, game4, 390, 620      ;404240
     isGame0 := game0 == 0x474A4F
     isGame1 := game1 == 0x161E1F
     isGame2 := game2 == 0x42454D
@@ -150,11 +152,11 @@ isGame() {
 }
 
 isStats() {
-    PixelGetColor, stats0, 439, 117     ;080C08
-    PixelGetColor, stats1, 246, 329     ;50594F
-    PixelGetColor, stats2, 1130, 510    ;060D12
-    PixelGetColor, stats3, 1137, 119    ;889488
-    PixelGetColor, stats4, 709, 118     ;3D3A3A
+    PixelGetColor, stats0, 431, 86     ;080C08
+    PixelGetColor, stats1, 238, 298     ;50594F
+    PixelGetColor, stats2, 1122, 479    ;060D12
+    PixelGetColor, stats3, 1129, 88    ;889488
+    PixelGetColor, stats4, 701, 87     ;3D3A3A
     isStats0 := stats0 == 0x080C08
     isStats1 := stats1 == 0x4F5950
     isStats2 := stats2 == 0x120D06
